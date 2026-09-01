@@ -10,6 +10,40 @@ Allows LLMs and AI pair programmers to design, keyframe, and render studio-grade
 
 ---
 
+## ⚡ 1-Prompt Setup for Antigravity (Quickstart for Friends & Teams)
+
+If you are using **Google Antigravity (AGY)**, you don't have to manually configure JSON files or paths. Just copy and paste this exact prompt into your Antigravity chat:
+
+```text
+Set up the Motion Studio MCP server for me:
+1. Clone https://github.com/swaritsoni6-lgtm/motion-studio-mcp.git into my Antigravity scratch directory.
+2. Register it in my ~/.gemini/config/mcp_config.json under the server key "motion-studio" with command "python3" pointing to server.py.
+3. Test it by rendering a 2-second 1080p kinetic typography animation with title "HELLO ANTIGRAVITY" and subtitle "MOTION MCP ACTIVE" using the create_motion_graphic tool.
+```
+
+Antigravity will automatically clone the repository, register the MCP server, and render a verified demo video in seconds!
+
+---
+
+## 💬 Example Prompts to Use Once Installed
+
+Once registered, you can ask your Antigravity agent to create animations with natural language:
+
+* **Kinetic Typography:**
+  > *"Render a 3-second kinetic typography MP4 saying 'LAUNCH DAY IS HERE' with glowing cyan and purple gradients, subtitle 'VERSION 2.0 LIVE', at 1080p."*
+* **Sci-Fi HUD Hologram:**
+  > *"Create a 600x600 looping GIF of a cyberpunk holographic HUD dial with rotating compass brackets and a live 0-100% data telemetry counter."*
+* **Audio Waveform Visualizer:**
+  > *"Generate an audio spectrum visualizer animation with neon pink and purple oscillating frequency bars and mirrored floor reflections."*
+* **Custom Mathematical & 3D Geometry:**
+  > *"Render a 3D wireframe dodecahedron rotating on 3 axes with glowing vertices and perspective depth using the programmatic animation engine."*
+* **Video Post-Processing & Glitch FX:**
+  > *"Take my input video `promo.mp4`, apply a chromatic aberration RGB glitch effect, add a cinematic vignette, and apply a cyberpunk color grading LUT."*
+* **Lottie UI Micro-Interactions:**
+  > *"Generate a Bodymovin/Lottie JSON animation for a success checkmark badge with emerald green color for my web app."*
+
+---
+
 ## 🚀 Key Capabilities
 
 ### 1. 🎨 Parameterized Motion Graphics
@@ -38,7 +72,7 @@ Allows LLMs and AI pair programmers to design, keyframe, and render studio-grade
 
 ---
 
-## 📦 Installation & Setup
+## 📦 Manual Installation & Configuration
 
 ### Prerequisites
 * **Python 3.10+**
@@ -50,9 +84,9 @@ git clone https://github.com/swaritsoni6-lgtm/motion-studio-mcp.git
 cd motion-studio-mcp
 ```
 
-### Adding to Antigravity / Claude Desktop / MCP Clients
+### Configuration (`mcp_config.json`)
 
-Add the server entry to your `mcp_config.json`:
+Add the server to your `~/.gemini/config/mcp_config.json` (or Claude Desktop `claude_desktop_config.json`):
 
 ```json
 {
@@ -69,7 +103,7 @@ Add the server entry to your `mcp_config.json`:
 
 ---
 
-## 🛠️ Tool Specifications
+## 🛠️ Tool Schema Reference
 
 ### `create_motion_graphic`
 ```json
