@@ -10,18 +10,26 @@ Allows LLMs and AI pair programmers to design, keyframe, and render studio-grade
 
 ---
 
-## ⚡ 1-Prompt Setup for Antigravity (Quickstart for Friends & Teams)
+## ⚡ 1-Prompt Standalone Antigravity Setup
 
-If you are using **Google Antigravity (AGY)**, you don't have to manually configure JSON files or paths. Just copy and paste this exact prompt into your Antigravity chat:
+You can copy and send the following standalone prompt to **Google Antigravity (AGY)**. It contains the repository link and complete setup instructions so the AI can perform the installation, registration, and verification autonomously in one turn:
 
 ```text
-Set up the Motion Studio MCP server for me:
-1. Clone https://github.com/swaritsoni6-lgtm/motion-studio-mcp.git into my Antigravity scratch directory.
-2. Register it in my ~/.gemini/config/mcp_config.json under the server key "motion-studio" with command "python3" pointing to server.py.
-3. Test it by rendering a 2-second 1080p kinetic typography animation with title "HELLO ANTIGRAVITY" and subtitle "MOTION MCP ACTIVE" using the create_motion_graphic tool.
-```
+Please set up the Motion Studio MCP animation server (https://github.com/swaritsoni6-lgtm/motion-studio-mcp.git) for me:
 
-Antigravity will automatically clone the repository, register the MCP server, and render a verified demo video in seconds!
+1. Clone the repository https://github.com/swaritsoni6-lgtm/motion-studio-mcp.git into my Antigravity scratch directory (e.g. ~/.gemini/antigravity/scratch/motion-studio-mcp).
+2. Register the MCP server in my ~/.gemini/config/mcp_config.json under the key "motion-studio":
+   {
+     "mcpServers": {
+       "motion-studio": {
+         "command": "python3",
+         "args": ["<path-to-cloned-repo>/server.py"]
+       }
+     }
+   }
+3. Test and verify the installation by calling the `create_motion_graphic` tool to render a 2-second 1080p kinetic typography animation with title "HELLO ANTIGRAVITY" and subtitle "MOTION STUDIO ACTIVE" to an MP4 video.
+4. Report back the output video location and confirm the available motion design tools (kinetic typography, HUD interfaces, waveform visualizers, Lottie JSON, video post-FX, and 3D scenes).
+```
 
 ---
 
